@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Hasil</title>
+	</head>
+	<body>
+		<h2 style="text-align:center">
+			Tugas Membuat Form dan Validasi dengan menggunakan WT-Forms</h2>
+		<p style="display:grid; justify-content: center;">
+			Data yang di kirim adalah:</p>
+		<p style="display:grid; justify-content: center;line-height: 25px;">
+        NPM: {{ npm }}<br/>
+		Nama: {{ nama }} <br />
+		Email: {{ email }} <br />
+        Prodi: {{ prodi }}<br/>
+		IPK: {{ ipk }} <br />
+		SKS: {{ sks }} <br/><br/>
+		
+		{% if ipk>=0 and ipk < 2.50  %}
+			Silakan hubungi dosen pembimbing akademik terlebih dahulu<br/>
+		{% elif ipk <= 2.99 and ipk >= 2.50 %}
+			Dengan IPK {{ipk}}, Anda bisa mengambil masksimal 18<br/>
+		{% elif ipk <= 3.24 and ipk >= 3.00 %}
+			Dengan IPK {{ipk}}, Anda bisa mengambil 22 SKS<br/>
+		{% elif ipk <= 4.00 and ipk >= 3.25 %}
+			Dengan IPK {{ipk}}, Anda bisa mengambil 24 SKS<br/>
+		{% else %}
+			Nilai IPK yang anda masukkan salah <br/>
+		{% endif %}
+		</p>
+	</body>
+</html>

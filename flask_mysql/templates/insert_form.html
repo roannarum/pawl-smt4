@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Flask MySQL</title>
+    </head>
+    <body>
+        <h2>Tambah data</h2>
+        <form action="{{ url_for('insert') }}" method="post">
+            Nama: <br/>
+            <input type="text" name="nama" size="50"
+                maxlength="50"/><br/>
+            No. Telp: <br/>
+            <input type="text" name="no_telp" size="20" maxlength="20"/><br/>
+            <p><input type="submit" value="Simpan"></p><br/>
+        </form>
+    </body>
+</html>

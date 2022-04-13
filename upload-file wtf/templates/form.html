@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Contoh Upload File</title>
+</head>
+<body>
+    <h2>Contoh Upload File</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        {{ form.file.label }} <br /> 
+        {{ form.file() }} <br />
+    <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

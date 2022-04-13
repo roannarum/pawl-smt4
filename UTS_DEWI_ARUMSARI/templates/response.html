@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Message</title>
+	</head>
+    <body>
+		<fieldset><big><b>DATA TERKIRIM</b><a href="/hasil">lihat Database</a><br/>
+		{% for baris in container %}
+			Nama	: {{ baris[1] }}<br/>
+			NPM		: {{ baris[2] }}<br/>
+			Prodi	: {{ baris[3] }}<br/>
+			IPK		: {{ baris[4] }}<br/>
+			SKS		: {{ baris[5] }}<br/>
+			
+			{% if baris[4]>=0 and baris[4] < 2.50  %}
+				Batasan	: Silakan hubungi dosen pembimbing akademik terlebih dahulu<br/>
+			{% elif baris[4] <= 2.99 and baris[4] >= 2.50 %}
+				Batasan	: Dengan IPK {{baris[4]}}, Anda bisa mengambil masksimal 18 SKS<br/>
+			{% elif baris[4] <= 3.24 and baris[4]>= 3.00 %}
+				Batasan	: Dengan IPK {{baris[4]}}, Anda bisa mengambil 22 SKS<br/>
+			{% elif baris[4] <= 4.00 and baris[4] >= 3.25 %}
+				Batasan	: Dengan IPK {{baris[4]}}, Anda bisa mengambil 24 SKS<br/>
+			{% else %}
+				Batasan	: Nilai IPK yang anda masukkan salah <br/>
+			{% endif %}
+			</td>
+		</tr>
+
+		{% endfor %}
+	</fieldset>
+    </body>
+</html>

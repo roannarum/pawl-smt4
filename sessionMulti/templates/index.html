@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Multiuser dan Multilevel</title>
+    </head>
+    <body>
+        <h2>Multiuser dan Multilevel</h2>
+        <p>Selamat datang {{ username }}</p>
+        {% for login in tabel%}
+        Level : {{ login[4]}}
+        {% endfor%}
+        <br/>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </body>
+</html>

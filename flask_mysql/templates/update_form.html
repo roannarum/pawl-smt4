@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Contoh Flask-MySQL</title>
+</head>
+<body>
+  <h2>Ubah Data</h2>
+  <form action="{{ url_for('update_process') }}"
+        method="post">
+        Nama: <br />
+        <input type="text" name="nama"
+            value="{{ data[1] }}"
+            size="50" maxlength="50" /><br />
+        No Telp: <br />
+        <input type="text" name="no_telp"
+            value="{{ data[2] }}"
+            size="20" maxlength="20" /><br />
+        <input type%="hidden" name="no" value="{{ data[0] }}" />
+        <p><input type="submit" value="Simpan"></p><br />
+  </form>
+</body>
+</html>

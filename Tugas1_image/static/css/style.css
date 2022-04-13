@@ -1,0 +1,28 @@
+body{
+    font-family: monospace;
+}
+
+
+h1 {
+    font-weight: bolder;
+    text-align:center;
+    font-size:30px;
+}
+.arum{
+    margin-bottom:5%;
+
+}
+
+img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height:min-content;
+    border-radius: 20px;
+    box-shadow: 10px 7px 8px #888888;
+}
+h2{
+    font-size: 20px;
+    text-align:center;
+}

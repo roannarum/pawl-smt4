@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>PERCABANGAN</title>
+    </head>
+    <body>
+        <h2> contoh</h2>
+        <ul>
+            {% for elemen in navigasi %}
+            <li><a href="{{elemen[0]}}">{{ elemen[1] }}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

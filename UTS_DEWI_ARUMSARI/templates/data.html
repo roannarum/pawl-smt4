@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Hasil</title>
+	</head>
+	<body>
+		<h2 style="text-align:center">
+			UJIAN TENGAH SEMESTER<br/>Dewi Arumsari<br/>
+            202103029</h2>
+		<p style="display:grid; justify-content: center;">
+			Database:</p>
+			
+		<table style= "margin: auto;width:80%; text-align: 
+        center;line-height: 25px; border: 1;" border="1">
+			<tr class="th">
+				<td>No</td>
+				<td>NPM</td>
+				<td>Nama</td>
+				<td>Prodi</td>
+				<td>IPK</td>
+				<td>Keterangan Batasan SKS</td>
+			</tr>
+			{% for baris in container %}
+			<tr>
+				<td>{{ baris[0] }}</td>
+				<td>{{ baris[1] }}</td>
+				<td>{{ baris[2] }}</td>
+				<td>{{ baris[3] }}</td>
+				<td>{{ baris[4] }}</td>
+				<td>
+				{% if baris[4]>=0 and baris[4] < 2.50  %}
+					Silakan hubungi dosen pembimbing akademik terlebih dahulu<br/>
+				{% elif baris[4] <= 2.99 and baris[4] >= 2.50 %}
+					Dengan IPK {{baris[4]}}, {{ baris[2] }} bisa mengambil masksimal 18 SKS<br/>
+				{% elif baris[4] <= 3.24 and baris[4]>= 3.00 %}
+					Dengan IPK {{baris[4]}}, {{ baris[2] }} bisa mengambil 22 SKS<br/>
+				{% elif baris[4] <= 4.00 and baris[4] >= 3.25 %}
+					Dengan IPK {{baris[4]}}, {{ baris[2] }} bisa mengambil 24 SKS<br/>
+				{% else %}
+					Nilai IPK yang {{ baris[2] }} masukkan salah <br/>
+				{% endif %}
+				</td>
+			</tr>
+			{% endfor %}
+            
+		</table>
+		<p><a href="{{ url_for('insert') }}">Tambah Data</a></p>
+	</body>
+</html>

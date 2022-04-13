@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Tugas Validasi</title>
+	</head>
+	<body>
+		<h2 style="text-align:center">
+			Tugas Membuat Form dan Validasi<br/>
+			dengan menggunakan WT-Forms</h2>
+		{% macro showerror(field) %}
+			{% if errors %}
+				{% for t in errors %}
+					{% if field in t[0] %}
+						<span style="color:red;
+								font-size:15px">
+							{{ t[1][0] }}
+						</span>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		{% endmacro %}
+
+		<form method="post" style="display:grid;
+		 justify-content: center; line-height: 10px;">
+			{# baris di bawah ini wajib disertakan #}
+			{# agar fora.validate() dapat bernilai True #}
+			{{ form.csrf_token }}
+            {{ form.npm.label}}<br/>
+            {{ form.npm() }} {{ showerror('npm') }}<br/>
+			{{ form.nama.label }} <br />
+			{{ form.nama() }} {{ showerror('nama') }}<br/>
+			{{ form.email.label }} <br />
+			{{ form.email() }} {{ showerror('email') }}<br/>
+            {{ form.prodi.label }}<br/>
+            {{ form.prodi() }} {{ showerror('prodi') }}<br/>
+			{{ form.ipk.label }} <br />
+			{{ form.ipk() }} {{ showerror('ipk') }}<br/>
+			{{ form.sks.label }} <br />
+			{{ form.sks() }} {{ showerror('sks') }}
+			<br />
+			<p>{{ form.submit() }}</p>
+		</form>
+	</body>
+</html>

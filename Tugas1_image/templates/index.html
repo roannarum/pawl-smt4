@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>image</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+    </head>
+    <body>
+        <div class="arum">
+            <h1>Nama : Dewi Arumsari</h1>
+            <h1>NPM : 202103029</h1><br/>
+            <h2>Menampilkan teks dan gambar menggunakan perulangan dan css agar teks dan image yang tampil bisa berbeda</h2><br/>
+            
+            {% for gambar in poto %}
+            <div class="get">
+                <h2>{{ gambar.nama }}</h2>   
+            </div>
+            <img class="gambar" src = "{{ url_for('static', filename = gambar.image)}} " alt="{{ gambar.nama }}"/>
+            {%endfor%}
+        </div>
+    </body>
+</html>

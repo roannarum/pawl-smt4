@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>PERCABANGAN</title>
+    </head>
+    <body>
+        <h3>Nama : Dewi Arumsari</h3>
+        <h3>NPM : 202103029</h3><br/>
+        <h2> Konversi Nilai Angka Menjadi Huruf</h2>
+        Nilai Arum = {{ a }} <br/>
+        {% if a>=0 and a <= 50  %}
+        Mendapat nilai E.
+        {% elif a <= 60 and a > 50 %}
+            Mendapat nilai D.
+        {% elif a <= 70 and a > 60 %}
+            Mendapat nilai C
+        {% elif a <= 80 and a > 70 %}
+            Mendapat nilai B
+        {% elif a <= 100 and a > 80 %}
+            Mendapat nilai A
+        {% else %}
+            Nilai yang anda masukkan salah, tolong masukkan nilai antara 1 - 100.
+        {% endif %}
+    </body>
+</html>

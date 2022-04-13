@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Contoh Form WTF</title>
+    </head>
+    <body>
+        <h2>Contoh Form WTF</h2>
+        <p>Data yang di kirim adalah:</p>
+        <p>
+            Nama: {{ nama }} <br/>
+            Alamat: {{ alamat }}<br/>
+            Jenis Kelamin:
+            {% if jeniskelamin == 'P' %}
+                Pria
+            {% else %}
+                Wanita
+            {% endif %}
+            <br/>
+            Agama:
+            {% if agama == 1 %}
+                Islam
+            {% elif agama == 2 %}
+                Protestan
+            {% elif agama == 3 %}
+                Katolik
+            {% elif agama == 4 %}
+                Hindu
+            {% else %}
+                Budha
+            {% endif %}<br/>
+            
+            Hobi:
+            {% if hobi1 == true %}
+                Olahraga
+            {% endif %}
+
+            {% if hobi2 == true %}
+                Tidur
+            {% endif %}
+            
+            {% if hobi3 == true %}
+                Nonton
+            {% endif %}
+        </p>
+    </body>
+</html>
